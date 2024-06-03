@@ -31,7 +31,7 @@ def main():
             if login(username, password):
                 st.session_state["logged_in"] = True
                 st.success("성공적으로 로그인하였습니다!")
-                st.switch_page("pages")
+                # st.switch_page("pages")
             else:
                 st.error("사용자 이름 또는 비밀번호가 잘못되었습니다.")
 

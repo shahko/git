@@ -1,18 +1,14 @@
 import streamlit as st
-import hashlib
 
 # 사용자 데이터 (예제에서는 간단하게 딕셔너리로 저장)
 # 실제로는 데이터베이스에 저장된 데이터를 불러와야 합니다.
 users = {
-    "user1": hashlib.sha256("password1".encode()).hexdigest(),
-    "user2": hashlib.sha256("password2".encode()).hexdigest()
+    "user1": "password1",
+    "user2": "password2"
 }
 
-def hash_password(password):
-    return hashlib.sha256(password.encode()).hexdigest()
-
 def login(username, password):
-    if username in users and users[username] == hash_password(password):
+    if username in users and users[username] == password:
         return True
     return False
 
